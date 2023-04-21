@@ -36,6 +36,12 @@
     90% {transform:translateX(10rem)translateY(-5rem)}
     100% {transform:translateX(0)}
 }
+.jolypote-jardin {
+    text-align: center;
+}
+.jolypote-jardin > img {
+    width:20rem;
+}
 .alex-container {
     display:flex;
 }
