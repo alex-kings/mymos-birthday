@@ -17,6 +17,9 @@
     80%  {background-color:rgb(64, 217, 64); color:rgb(26, 122, 113)}
     100% {background-color:pink; color:gray}
 }
+.blague-container {
+    padding:1rem 0;
+}
 .blague-container:hover > a {
     animation-name:leave;
     animation-duration: 2s;
@@ -28,8 +31,8 @@
 @keyframes leave {
     0% {transform:translateX(0)}
     20% {transform:translateX(15rem)}
-    50% {transform:translateX(20rem)}
-    80% {transform:translateX(6rem)}
-    90% {transform:translateX(10rem)}
+    50% {transform:translateX(20rem) translateY(5rem)}
+    80% {transform:translateX(6rem) translatey(1rem)}
+    90% {transform:translateX(10rem)translateY(-5rem)}
     100% {transform:translateX(0)}
 }

@@ -6,6 +6,9 @@
 body {
     font-family: 'Comic Sans MS','Comic Sans',sans-serif;
 }
+p {
+    margin:1rem 0;
+}
 .main {
     padding:0 5rem;
 }
