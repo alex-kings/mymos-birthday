@@ -28,6 +28,10 @@
 .blague-link {
     display:inline-block;
 }
+.rows {
+    display: flex;
+    gap:1rem;
+}
 @keyframes leave {
     0% {transform:translateX(0)}
     20% {transform:translateX(15rem)}
@@ -70,4 +74,28 @@
 }
 .alex-photo {
     width:100%;
+}
+
+.weather {
+    max-width: 30rem;
+    border-radius: .5rem;
+    padding:1rem;
+    background: linear-gradient(43deg, rgb(205, 205, 252),white,rgb(177, 177, 221));
+}
+.weather > h2 {
+    text-align: center;
+}
+.weather > img {
+    width:100%;
+    min-width: 16rem;
+    max-width: 20rem;
+}
+.author {
+    color:gray;
+}
+
+@media only screen and (max-width: 600px) {
+  .rows {
+    flex-direction: column;
+  }
 }
