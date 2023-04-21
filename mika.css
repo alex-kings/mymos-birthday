@@ -1,0 +1,18 @@
+.mika-message {
+    background-color: blanchedalmond;
+    font-family: 'Tangerine','Comic Sans MS','Comic Sans',sans-serif;
+    font-size: 2em;
+    padding:1rem;
+    border-radius:.5rem;
+}
+.mika-container {
+    display:flex;
+    gap:1rem;
+    margin-top:2rem;
+}
+.mika-img {
+    width:100%;
+}
+.center {
+    text-align: center;
+}
