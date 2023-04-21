@@ -45,6 +45,7 @@
     border-radius: .5rem;
     background:url('./images/flower_background.webp');
     border:3px solid rgb(200, 105, 105);
+    text-align: center;
 }
 .jolypote-jardin-text{
     background-color: rgb(254, 234, 255);
@@ -54,7 +55,8 @@
     color:rgb(150, 72, 72);
 }
 .jolypote-jardin > img {
-    width:20rem;
+    max-width:90%;
+
     border:2px solid rgb(200, 105, 105);
     border-radius:.3rem;
 }
