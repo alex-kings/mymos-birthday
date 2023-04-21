@@ -1,3 +1,8 @@
+*{
+    padding:0;
+    margin:0;
+    --d:1rem;
+}
 body{
     display:flex;
     justify-content: center;
@@ -5,8 +10,28 @@ body{
     flex-direction: column;
     background: linear-gradient(red,pink);
     height:100vh;
+    text-align: center;
 }
 p{
     color:white;
     font-size:2em;
+}
+.img {
+    cursor:pointer;
+}
+.img:hover {
+    animation: giggles 2s ease;
+}
+@keyframes giggles {
+    0% {transform:translateY(0rem)}
+    10% {transform:translateY(var(--d))}
+    20% {transform:translateY(- var(--d))}
+    30% {transform:translateY(var(--d))}
+    40% {transform:translateY(- var(--d))}
+    50% {transform:translateY(var(--d))}
+    60% {transform:translateY(- var(--d))}
+    70% {transform:translateY(var(--d))}
+    80% {transform:translateY(- var(--d))}
+    90% {transform:translateY(var(--d))}
+    100% {transform:translateY(0rem)}
 }
