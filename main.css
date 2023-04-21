@@ -1,0 +1,19 @@
+.title {
+    display:inline;
+    text-align: center;
+    animation-name:example;
+    animation-duration: 4s;
+    animation-iteration-count:infinite;
+    padding:.5rem;
+    border-radius:.5rem;
+    margin:1rem;
+}
+/* The animation code */
+@keyframes example {
+    0%   {background-color:pink; color:gray}
+    20%  {background-color:red; color:blue}
+    40%  {background-color:yellow; color:green}
+    60%  {background-color:blue; color:red}
+    80%  {background-color:rgb(64, 217, 64); color:rgb(26, 122, 113)}
+    100% {background-color:pink; color:gray}
+}

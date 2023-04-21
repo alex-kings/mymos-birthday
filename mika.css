@@ -1,7 +1,7 @@
 .mika-message {
     background-color: blanchedalmond;
     font-family: 'Tangerine','Comic Sans MS','Comic Sans',sans-serif;
-    font-size: 2em;
+    font-size: 2.5em;
     padding:1rem;
     border-radius:.5rem;
 }
@@ -12,6 +12,8 @@
 }
 .mika-img {
     width:100%;
+    min-width:15rem;
+    max-width: 30rem;
 }
 .center {
     text-align: center;

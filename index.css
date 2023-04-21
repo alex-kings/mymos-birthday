@@ -9,6 +9,11 @@ body {
 .main {
     padding:0 5rem;
 }
+.center {
+    display:flex; 
+    justify-content: center;
+    align-items: center;
+}
 .mika-link {
     text-decoration: none;
     color:red;
