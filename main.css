@@ -36,3 +36,14 @@
     90% {transform:translateX(10rem)translateY(-5rem)}
     100% {transform:translateX(0)}
 }
+.alex-container {
+    display:flex;
+}
+.alex-container > div {
+    width:100%;
+    text-align: center;
+    max-width:15rem;
+}
+.alex-photo {
+    width:100%;
+}
