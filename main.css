@@ -75,21 +75,33 @@
 .alex-photo {
     width:100%;
 }
-
-.weather {
+.news {
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+}
+.news-card {
     max-width: 30rem;
     border-radius: .5rem;
     padding:1rem;
+}
+.weather {
     background: linear-gradient(43deg, rgb(205, 205, 252),white,rgb(177, 177, 221));
 }
 .weather > h2 {
     text-align: center;
 }
-.weather > img {
+.small-img {
+    margin-top: 1rem;
     width:100%;
     min-width: 16rem;
     max-width: 20rem;
 }
+.plage {
+    text-align: center;
+    background-color: rgb(255, 255, 210);
+}
+
 .author {
     color:gray;
 }
