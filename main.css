@@ -1,7 +1,7 @@
 .title {
     display:inline;
     text-align: center;
-    animation-name:example;
+    animation-name:change-color;
     animation-duration: 4s;
     animation-iteration-count:infinite;
     padding:.5rem;
@@ -9,11 +9,27 @@
     margin:1rem;
 }
 /* The animation code */
-@keyframes example {
+@keyframes change-color {
     0%   {background-color:pink; color:gray}
     20%  {background-color:red; color:blue}
     40%  {background-color:yellow; color:green}
     60%  {background-color:blue; color:red}
     80%  {background-color:rgb(64, 217, 64); color:rgb(26, 122, 113)}
     100% {background-color:pink; color:gray}
+}
+.blague-container:hover > a {
+    animation-name:leave;
+    animation-duration: 2s;
+    animation-iteration-count:infinite;
+}
+.blague-link {
+    display:inline-block;
+}
+@keyframes leave {
+    0% {transform:translateX(0)}
+    20% {transform:translateX(15rem)}
+    50% {transform:translateX(20rem)}
+    80% {transform:translateX(6rem)}
+    90% {transform:translateX(10rem)}
+    100% {transform:translateX(0)}
 }
