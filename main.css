@@ -88,6 +88,9 @@
 .weather {
     background: linear-gradient(43deg, rgb(205, 205, 252),white,rgb(177, 177, 221));
 }
+.text-center {
+    text-align: center;
+}
 .weather > h2 {
     text-align: center;
 }
@@ -101,7 +104,38 @@
     text-align: center;
     background-color: rgb(255, 255, 210);
 }
-
+.foufou {
+    position:relative;
+    margin:1rem;
+    background:url(./images/normal.jpg);
+    background-size: contain;
+    width:32rem;
+    height:24rem;
+}
+.img-text-1 {
+    position:absolute;
+    left:8rem;
+    top:3rem;
+}
+.img-text-2 {
+    display:none;
+    position:absolute;
+    left:12rem;
+    top:3rem;
+}
+.foufou:hover {
+    background:url(./images/scary.jpg);
+    background-size: contain;
+    width:32rem;
+    height:24rem;
+    font-size: 1.3em;
+}
+.foufou:hover > .img-text-1 {
+    display:none;
+}
+.foufou:hover > .img-text-2 {
+    display:inline;
+}
 .author {
     color:gray;
 }
