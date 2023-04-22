@@ -24,3 +24,10 @@ p {
     padding:.2rem;
     border-radius: .3rem;
 }
+
+.collection-du-ptit-ney {
+    margin: 20px;
+    padding: 20px;
+    background: linear-gradient(rgb(255, 73, 73) 50%, white 50%);
+    border: rgb(255, 73, 73) 2px solid;
+}
