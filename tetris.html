@@ -47,7 +47,7 @@ function getRandomInt(min, max) {
 // generate a new tetromino sequence
 // @see https://tetris.fandom.com/wiki/Random_Generator
 function generateSequence() {
-  const sequence = ['I', 'J', 'L', 'O', 'S', 'T', 'Z'];
+  const sequence = ['I', 'J', 'L', 'O', 'S', 'T', 'Z', 'THOSTU'];
 
   while (sequence.length) {
     const rand = getRandomInt(0, sequence.length - 1);
@@ -217,6 +217,15 @@ const tetrominos = {
     [0,1,0],
     [1,1,1],
     [0,0,0],
+  ],
+  'THOSTU': [
+    [1,0,0,1,0,0,1],
+    [0,1,0,1,0,1,0],
+    [0,0,1,1,1,0,0],
+    [0,1,0,1,0,1,0],
+    [0,0,0,1,0,0,0],
+    [1,1,1,1,1,1,1],
+    [0,0,0,0,0,0,0],
   ]
 };
 
@@ -228,7 +237,8 @@ const colors = {
   'S': 'green',
   'Z': 'red',
   'J': 'blue',
-  'L': 'orange'
+  'L': 'orange',
+  'THOSTU': 'white',
 };
 
 let count = 0;
@@ -269,14 +279,44 @@ function loop() {
       }
     }
 
-    context.fillStyle = colors[tetromino.name];
-
+    
     for (let row = 0; row < tetromino.matrix.length; row++) {
       for (let col = 0; col < tetromino.matrix[row].length; col++) {
         if (tetromino.matrix[row][col]) {
-
+          
+          context.fillStyle = colors[tetromino.name];
           // drawing 1 px smaller than the grid creates a grid effect
           context.fillRect((tetromino.col + col) * grid, (tetromino.row + row) * grid, grid-1, grid-1);
+          
+          // thostu head on the squares
+          const cX = (tetromino.col + col + 0.5) * grid;
+          const cY = (tetromino.row + row + 0.5) * grid;
+          context.fillStyle = 'white';
+          context.beginPath();
+          context.ellipse(cX, cY, 0.5 * grid, 0.5 * grid, 0, 0, 2 * Math.PI);
+          context.fill();
+          context.fillStyle = 'red';
+          context.beginPath();
+          context.moveTo(cX, cY);
+          context.lineTo(cX - grid*0.1, cY - grid * 0.5);
+          context.lineTo(cX - grid*0.35, cY - grid * 0.5);
+          context.lineTo(cX - 0.1, cY);
+          context.closePath();
+          context.fill();
+          context.beginPath();
+          context.moveTo(cX, cY);
+          context.lineTo(cX + grid*0.1, cY - grid * 0.5);
+          context.lineTo(cX + grid*0.35, cY - grid * 0.5);
+          context.lineTo(cX + 0.1, cY);
+          context.closePath();
+          context.fill();
+          context.beginPath();
+          context.ellipse(cX, cY, 0.25 * grid, 0.2 * grid, 0, 0, 2 * Math.PI);
+          context.fill();
+          context.strokeStyle = 'black';
+          context.beginPath();
+          context.ellipse(cX, cY, 0.5 * grid, 0.5 * grid, 0, 0, 2 * Math.PI);
+          context.stroke();
         }
       }
     }
