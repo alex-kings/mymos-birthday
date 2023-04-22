@@ -170,6 +170,12 @@
     color:white;
     padding:1rem;
 }
+.clique-ici {
+    transition: 1s;
+}
+.clique-ici:hover {
+    transform: rotateZ(720deg);
+}
 @media only screen and (max-width: 600px) {
   .rows {
     flex-direction: column;
