@@ -87,12 +87,30 @@
 }
 .weather {
     background: linear-gradient(43deg, rgb(205, 205, 252),white,rgb(177, 177, 221));
+    overflow: hidden;
+    position: relative;
+}
+.weather:hover > .jean-paul-moyte {
+    transform: rotateZ(180deg)
+        translate(-10rem, 2rem);
 }
 .text-center {
     text-align: center;
 }
 .weather > h2 {
     text-align: center;
+}
+.jean-paul-moyte {
+    display: inline-block;
+    width:5rem;
+    position:absolute;
+    transform: rotateZ(180deg)
+        translate(-10rem, 6.2rem);
+    z-index: 1;
+    transition: .1s ease-out;
+}
+.jean-paul-moyte > img {
+    width : 100%;
 }
 .small-img {
     margin-top: 1rem;
