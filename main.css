@@ -164,7 +164,12 @@
 .coconey {
     width:10rem;
 }
-
+.bandeau {
+    margin-top: 2rem;
+    background-color: black;
+    color:white;
+    padding:1rem;
+}
 @media only screen and (max-width: 600px) {
   .rows {
     flex-direction: column;
