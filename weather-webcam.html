@@ -54,7 +54,44 @@
             padding: 10px;
             font-size: 0.8em;
             font-weight: 500;
-            background: #fff9;
+            background: #fff5;
+        }
+        #popup {
+            position: absolute;
+            background: #fff5;
+            width: 200px;
+            padding: 20px;
+            animation: popup-border 0.3s infinite;
+        }
+        @keyframes popup-border {
+            from {
+                border: 3px solid black;
+            }
+            50% {
+                border: 3px solid black;
+            }
+            51% {
+                border: 3px solid red;
+            }
+            to {
+                border: 3px solid red;
+            }
+        }
+        #popup * {
+            text-align: left;
+        }
+        #popup i {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            color: red;
+        }
+        h5 {
+            font-size: 1.3em;
+        }
+        button {
+            padding: 5px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -71,11 +108,31 @@
         Pour reporter tout probleme technique avec le service webcam, veuillez prendre contact avec Zeus tout-puissant (gestionnaire
         technique du CMdlM&copy; et roi des dieux) au 34876 (numéro international pour appels en provenance hors-Moyte: +00 00 34 87 60)
     </h4>
+    <div id="popup" style="display:none">
+        <h5>Le conseil malin!</h5>
+        <p>Vu le temps qu'il fait, on te conseille de porter:</p>
+        <i>Une veste bien chaude</i>
+        <button id="popup-close">Fermer le conseil malin</button>
+    </div>
     <script>
         (async () => {
             
             const SHAKE_OFFSET = 10;
             const NUM_PARTICLES = 8192;
+            
+            (async () => {
+                const popup = document.querySelector('#popup');
+                const popupClose = document.querySelector('#popup-close');
+                popupClose.addEventListener('click', () => popup.style.display = 'none');
+                while (true) {
+                    await new Promise(r => setTimeout(r, 500 + Math.random() * 5000));
+                    if (popup.style.display == 'none') {
+                        popup.style.left = `${Math.random() * (window.innerWidth - 200)}px`;
+                        popup.style.top = `${Math.random() * (window.innerHeight - 200)}px`;
+                        popup.style.display = null;
+                    }
+                }
+            })();
             
             // arbitrary loading time for tension
             const loading = document.querySelector('h3');
