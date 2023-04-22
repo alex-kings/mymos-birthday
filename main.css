@@ -161,6 +161,9 @@
 .author {
     color:gray;
 }
+.coconey {
+    width:10rem;
+}
 
 @media only screen and (max-width: 600px) {
   .rows {
