@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moyte weather - en direct!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: none;
+            overflow: hidden;
+            font-family: sans-serif;
+        }
+        .fullscreen {
+            z-index: -1;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+        }
+        a {
+            padding: 10px;
+        }
+        h1, h2, p {
+            text-align: center;
+        }
+        h2 {
+            animation: blink 0.8s infinite;
+        }
+        @keyframes blink {
+            from {
+                color: red;
+            }
+            50% {
+                color: rgb(122, 0, 0);
+            }
+            to {
+                color: red;
+            }
+        }
+        h3 {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        h4 {
+            position: absolute;
+            bottom: 0;
+            padding: 10px;
+            font-size: 0.8em;
+            font-weight: 500;
+            background: #fff9;
+        }
+    </style>
+</head>
+<body>
+    <canvas class="fullscreen"></canvas>
+    <a href="./index.html">Retour site principal</a>
+    <h1>Moyte Weather Webcam™</h1>
+    <p>Detected weather pattern: <i>éclaircies parsemées</i></p>
+    <h2>[ live ]</h2>
+    <h3>Loading webcam feed...</h3>
+    <h4>
+        Centre météorologique de la Moyte&copy;. All rights reserved.
+        <br/>
+        Pour reporter tout probleme technique avec le service webcam, veuillez prendre contact avec Zeus tout-puissant (gestionnaire
+        technique du CMdlM&copy; et roi des dieux) au 34876 (numéro international pour appels en provenance hors-Moyte: +00 00 34 87 60)
+    </h4>
+    <script>
+        (async () => {
+            
+            const SHAKE_OFFSET = 10;
+            const NUM_PARTICLES = 8192;
+            
+            // arbitrary loading time for tension
+            const loading = document.querySelector('h3');
+            for (let t = 0; t < 6; ++t) {
+                loading.innerHTML = `Loading webcam feed`;
+                await new Promise(resolve => setTimeout(resolve, 250));
+                loading.innerHTML = `Loading webcam feed.`;
+                await new Promise(resolve => setTimeout(resolve, 250));
+                loading.innerHTML = `Loading webcam feed..`;
+                await new Promise(resolve => setTimeout(resolve, 250));
+                loading.innerHTML = `Loading webcam feed...`;
+                await new Promise(resolve => setTimeout(resolve, 250));
+            }
+            loading.remove();
+            
+            const canvas = document.querySelector('canvas');
+            const background = new Image;
+            await new Promise((resolve, reject) => {
+                background.onload = resolve;
+                background.onerror = reject;
+                background.src = `./images/sunshine-and-rainbows.jpg`;
+            });
+            canvas.width = background.width + 2 * SHAKE_OFFSET;
+            canvas.height = background.height + 2 * SHAKE_OFFSET;
+            const ctx = canvas.getContext('2d');
+            const particles = (new Array(NUM_PARTICLES)).fill(null).map(() => [
+                Math.random(),
+                Math.random(),
+                1 + Math.random() * 3,
+                1 + Math.random(),
+            ]);
+            
+            let prevTime = performance.now();
+            let lightning = 0;
+            while (true) {
+                const now = performance.now();
+                const dt = (now - prevTime) / 1000;
+                prevTime = now;
+                
+                ctx.drawImage(background, -Math.random() * SHAKE_OFFSET, -Math.random() * SHAKE_OFFSET, canvas.width + SHAKE_OFFSET * 2, canvas.height + SHAKE_OFFSET * 2);
+                
+                ctx.fillStyle = '#ccc';
+                for (const particle of particles) {
+                    ctx.fillRect((particle[0] % 1) * canvas.width, (particle[1] % 1) * canvas.height, particle[2], particle[2]);
+                    particle[0] += dt * 1.25 * particle[3];
+                    particle[1] += dt * 0.6 * particle[3];
+                }
+                
+                lightning -= dt * 3;
+                if (Math.random() < 0.002) {
+                    lightning = 1;
+                }
+                ctx.fillStyle = lightning <= 0 || (lightning > 0.4 && lightning < 0.6) ? '#0003' : '#fff3';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                await new Promise(requestAnimationFrame);
+            }
+        })();
+    </script>
+</body>
+</html>
