@@ -15,8 +15,8 @@
     width:100%;
 }
 .description {
-    height:auto;
-    font-size: .7em;
+    /* height:auto; */
+    /* font-size: .7em; */
 }
 .item {
     background-color: red;
@@ -34,7 +34,7 @@
     grid-column-start: 5;
     grid-column-end: 7;
     grid-row-start: 4;
-    grid-row-end: 7;
+    /* grid-row-end: 7; */
     transform: rotateZ(-2deg);
 }
 .item-3 {
