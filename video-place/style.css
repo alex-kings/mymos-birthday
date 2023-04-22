@@ -1,0 +1,33 @@
+* {
+    padding:0;
+    margin:0;
+}
+.video-container {
+    display: flex;
+    height:100vh;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+    background:url("./images/fiesta.webp");
+    background-size: cover;
+}
+.block {
+    width:100%;
+    height:100%;
+    z-index: 1;
+    position:absolute;
+    border-radius: .3rem;
+}
+.relative {
+    position: relative;
+}
+.b1 {
+    background:url("./images/paper-2.jpg");
+    background-size: cover;
+    border:.2rem solid red;
+}
+.b2 {
+    background:url("./images/paper-3.jpg");
+    background-size: cover;
+    border:.2rem solid blue;
+}

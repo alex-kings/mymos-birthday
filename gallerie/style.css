@@ -1,6 +1,8 @@
 body {
     font-family: 'Tangerine',serif;
-    font-size: 1.8em;
+    font-size: 2em;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 41%, rgba(187,119,42,0.6037814784116772) 100%);
 }
 .container {
     display:flex;
@@ -21,7 +23,7 @@ body {
 .description {
     text-align: center;
 }
-h1 {
+.center {
     text-align: center;
 }
 .item {
