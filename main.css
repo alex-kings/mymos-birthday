@@ -187,6 +187,69 @@
 .clique-ici:hover {
     transform: rotateZ(720deg);
 }
+.jeux-container {
+    text-align: center;
+    background: linear-gradient(90deg,rgba(255, 0, 0, 0.479),white,rgba(255, 0, 0, 0.479),white,rgba(255, 0, 0, 0.479),white,rgba(255, 0, 0, 0.479));
+    border-radius: .4rem;
+    padding:1rem;
+}
+.jeu-button {
+    padding:.3rem;
+    border-radius: .3rem;
+    background-color: white;
+    text-decoration: none;
+}
+.b1 {
+    animation: o1 .2s infinite step-start;
+}
+.b2 {
+    animation: o2 .3s infinite step-start;
+}
+.b3 {
+    animation: o3 .4s infinite step-start;
+}
+@keyframes o1 {
+    0% {
+        background-color: red;
+        color:white;
+    }
+    50% {
+        background-color: green;
+        color:aqua;
+    }
+    100% {
+        background-color: red;
+        color:white;
+    }
+}
+@keyframes o2 {
+    0% {
+        background-color: blue;
+        color:white;
+    }
+    50% {
+        background-color: yellow;
+        color:rgb(99, 67, 0);
+    }
+    100% {
+        background-color: blue;
+        color:white;
+    }
+}
+@keyframes o3 {
+    0% {
+        background-color: gray;
+        color:gold;
+    }
+    50% {
+        background-color: aquamarine;
+        color:palevioletred;
+    }
+    100% {
+        background-color: gray;
+        color:gold;
+    }
+}
 @media only screen and (max-width: 600px) {
   .rows {
     flex-direction: column;
