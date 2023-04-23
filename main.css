@@ -163,6 +163,17 @@
 }
 .coconey {
     width:10rem;
+    height: calc(10rem * 260/194);
+    background-image: url(./images/coconut.png);
+    background-size: contain;
+}
+.coconey:hover {
+    background-image: url(./images/coconut-open.png);
+}
+.coconey:hover::before {
+    content: 'klip klop!';
+    text-decoration: white underline;
+    color: black;
 }
 .bandeau {
     margin-top: 2rem;
