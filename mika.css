@@ -1,9 +1,33 @@
+* {
+    padding:0;
+    margin:0;
+}
 .mika-message {
     background-color: blanchedalmond;
     font-family: 'Tangerine','Comic Sans MS','Comic Sans',sans-serif;
     font-size: 2.5em;
     padding:1rem;
     border-radius:.5rem;
+    position: relative;
+}
+.baby-papoum {
+    position: absolute;
+    display: inline-block;
+    width:10rem;
+    rotate:180deg;
+    translate:1rem;
+    transform:translateY(9rem);
+    transition:4s ease-out;
+    z-index: -1;
+}
+.hover-container:hover > .baby-papoum {
+    transform:translateY(1rem);
+}
+.background {
+    z-index: -10;
+    position: fixed;
+    width:100vw;
+    height:100vh;
 }
 .mika-container {
     display:flex;
@@ -17,4 +41,9 @@
 }
 .center {
     text-align: center;
+}
+.white {
+    background-color: white;
+    padding:.4rem;
+    border-radius: .3rem;
 }
