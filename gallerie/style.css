@@ -11,7 +11,7 @@ body {
 .gallerie {
     display:grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows:repeat(18,1fr);
+    grid-template-rows:repeat(15,1fr);
     gap: .5rem;
     margin:1rem;
     max-width:50rem;
@@ -50,9 +50,8 @@ body {
     transform: rotateZ(-1deg);
 }
 .item-4 {
-    grid-column-start:3;
+    grid-column-start:2;
     grid-column-end: 6;
     grid-row-start:11;
-    grid-row-end: 16;;
     transform: rotateZ(2deg);
 }
